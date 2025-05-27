@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+	</head>
+	<body>
+		<div id="himac"></div>
+    <style>
+      #himac{
+        font-size:48px;
+      }
+    </style>
+		<script>
+			const himas =
+				"搨哂圃函損擺槓惘樶囑模啝嵋糯曙圖扇椙慄撮擱惆樌環捕柵穩儒嚼倔壥園桁幅犢嬌圜唱榛咽獨梠晒圓嘛橋嚮囎啜搬暢柤摺檎摸瑕嘯握榾悃唄揶擒囁囘嶮國楕憫槙橘概榲珮報捌据圍撰栢纜榻楊檎攝担楹唳攫嵎操提幄椰根極掫榴梱曚圉";
+			function selectHimaChar() {
+        if(Math.random()<0.8) return "暇"
+				const hima = himas[Math.floor(Math.random() * himas.length)];
+				return hima;
+			}
+      const himac = document.getElementById("himac")
+			function himagen() {
+        himac.innerHTML = "";
+				for (var x = 0; x < 100; x++) {
+					const h = document.createElement("span");
+					h.textContent = selectHimaChar();
+					himac.appendChild(h);
+				}
+			}
+      himagen()
+			setInterval(himagen, 2000);
+		</script>
+	</body>
+</html>
