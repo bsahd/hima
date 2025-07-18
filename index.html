@@ -1,71 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>himagen - bsahd</title>
-	</head>
-	<body>
-		<div id="himac"></div>
-		<div id="himad"></div>
-		<style>
-			#himac,
-			#himad {
-				font-size: 48px;
-				position: absolute;
-				left: 8px;
-				transition: opacity 1s linear;
-			}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>himagen - bsahd</title>
+  </head>
+  <body>
+    <div id="himac"></div>
+    <div id="himad"></div>
+    <style>
+      #himac,
+      #himad {
+        font-size: 48px;
+        position: absolute;
+        left: 8px;
+        transition: opacity 1s linear;
+      }
 
-			.hidden {
-				opacity: 0;
-				z-index: 1;
-			}
+      .hidden {
+        opacity: 0;
+        z-index: 1;
+      }
 
-			.visible {
-				opacity: 1;
-				z-index: 2;
-			}
-		</style>
-		<script>
-			const himas =
-				"搨哂圃函損擺槓惘樶囑模啝嵋糯曙圖扇椙慄撮擱惆樌環捕柵穩儒嚼倔壥園桁幅犢嬌圜唱榛咽獨梠晒圓嘛橋嚮囎啜搬暢柤摺檎摸瑕嘯握榾悃唄揶擒囁囘嶮國楕憫槙橘概榲珮報捌据圍撰栢纜榻楊檎攝担楹唳攫嵎操提幄椰根極掫榴梱曚圉";
+      .visible {
+        opacity: 1;
+        z-index: 2;
+      }
+    </style>
+    <script>
+      const himas =
+        "搨哂圃函損擺槓惘樶囑模啝嵋糯曙圖扇椙慄撮擱惆樌環捕柵穩儒嚼倔壥園桁幅犢嬌圜唱榛咽獨梠晒圓嘛橋嚮囎啜搬暢柤摺檎摸瑕嘯握榾悃唄揶擒囁囘嶮國楕憫槙橘概榲珮報捌据圍撰栢纜榻楊檎攝担楹唳攫嵎操提幄椰根極掫榴梱曚圉";
 
-			function selectHimaChar() {
-				if (Math.random() < 0.8) return "暇";
-				return himas[Math.floor(Math.random() * himas.length)];
-			}
+      function selectHimaChar() {
+        if (Math.random() < 0.8) return "暇";
+        return himas[Math.floor(Math.random() * himas.length)];
+      }
 
-			const himac = document.getElementById("himac");
-			const himad = document.getElementById("himad");
+      const himac = document.getElementById("himac");
+      const himad = document.getElementById("himad");
 
-			function himagen() {
-				let ah = "";
-				for (let x = 0; x < 1000; x++) {
-					ah += selectHimaChar();
-				}
-				himad.textContent = ah;
+      function himagen() {
+        let ah = "";
+        for (let x = 0; x < 1000; x++) {
+          ah += selectHimaChar();
+        }
+        himad.textContent = ah;
 
-				// スタイルを入れ替えてフェード効果を出す
-				himac.classList.remove("visible");
-				himac.classList.add("hidden");
-				himad.classList.remove("hidden");
-				himad.classList.add("visible");
+        // スタイルを入れ替えてフェード効果を出す
+        himac.classList.remove("visible");
+        himac.classList.add("hidden");
+        himad.classList.remove("hidden");
+        himad.classList.add("visible");
 
-				// 1秒後にDOMを入れ替え
-				setTimeout(() => {
-					himac.textContent = himad.textContent;
+        // 1秒後にDOMを入れ替え
+        setTimeout(() => {
+          himac.textContent = himad.textContent;
 
-					// クラスをリセット
-					himac.classList.remove("hidden");
-					himac.classList.add("visible");
-					himad.classList.remove("visible");
-					himad.classList.add("hidden");
-				}, 1000);
-			}
+          // クラスをリセット
+          himac.classList.remove("hidden");
+          himac.classList.add("visible");
+          himad.classList.remove("visible");
+          himad.classList.add("hidden");
+        }, 1000);
+      }
 
-			himagen();
-			setInterval(himagen, 5000);
-		</script>
-	</body>
+      himagen();
+      setInterval(himagen, 5000);
+    </script>
+  </body>
 </html>
